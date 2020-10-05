@@ -3,6 +3,12 @@
       { 
          "essential": true,
          "image": "registry.gitlab.com/ricardoabreum/demo:build",
+         "environment": [
+                {
+                    "name": "SENTRY_DSN",
+                    "value": "SENTRY_URL_DSN?environment=CI_ENVIRONMENT_NAME&release=CI_PIPELINE_ID"
+                }
+            ],
          "logConfiguration": { 
              "logDriver": "awslogs",
              "options": { 
