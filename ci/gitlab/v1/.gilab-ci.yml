@@ -1,13 +1,11 @@
-image: docker:latest
-
-services:
-    - docker:dind
-
 stages:
   - build 
   - deploy
 
 docker_build_and_push:
+    image: docker:latest
+    services:
+        - docker:dind
     stage: build
     script:
         - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
