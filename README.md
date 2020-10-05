@@ -13,7 +13,7 @@
 * [ ] Analisar o erro no Sentry
 * [ ] Configurar integração com Gitlab (v2 do .gitlab-ci.yml). ref.: [documentação oficial](https://docs.sentry.io/product/releases/)
  
-**Variáveis do gitlab para deploy na AWS e integração com Sentry
+**Variáveis do gitlab para deploy na AWS e integração com Sentry**
 
 - AWS_ACCESS_KEY_ID
 - AWS_DEFAULT_REGION
