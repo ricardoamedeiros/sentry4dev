@@ -8,10 +8,14 @@
   * [ ] Criar o projeto no Sentry
   * [ ] Configurar o SENTRY_DSN no projeto. ref.: [documentação oficial](https://docs.sentry.io/platforms/java/configuration/)
   * [ ] Configurar a biblioteca de integração do Sentry. ref.: [documentação oficial](https://docs.sentry.io/platforms/java/guides/spring-boot/)
+  * [ ] Realizar deploy na AWS ECS
+* [ ] Simular um erro
+* [ ] Analisar o erro no Sentry
+
+# Integração com o Gitlab
   
-[ ] Erro básico reportado;
-[ ] Criar uma release;
-[ ] Integrar com gitlab ci;
+* [ ] Configurar integração
+
 
 
 
