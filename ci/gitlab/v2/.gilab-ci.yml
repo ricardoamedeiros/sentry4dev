@@ -1,7 +1,9 @@
 stages:
   - build 
   - deploy
-  - sentry-staging
+  - sentry-releases
+  - sentry-commits
+  - sentry-deploys
 
 docker_build_and_push:
     image: docker:latest
@@ -15,19 +17,19 @@ docker_build_and_push:
 
 sentry-staging:
   image: getsentry/sentry-cli:1.52.3
-  stage: sentry-staging
+  stage: sentry-releases
   script:
     - sentry-cli releases new -p ${CI_PROJECT_NAME} ${CI_PIPELINE_ID}
 
 sentry-staging-commit:
   image: getsentry/sentry-cli:1.52.3
-  stage: sentry-staging
+  stage: sentry-commits
   script:
     - sentry-cli releases set-commits ${CI_PIPELINE_ID} --auto 
 
 sentry-staging-deploy:
   image: getsentry/sentry-cli:1.52.3
-  stage: sentry-staging
+  stage: sentry-deploys
   environment:
     name: staging
   script:
