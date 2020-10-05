@@ -1,0 +1,26 @@
+image: docker:latest
+
+services:
+    - docker:dind
+
+stages:
+  - build 
+  - deploy
+
+docker_build_and_push:
+    stage: build
+    script:
+        - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+        - docker build -t $CI_REGISTRY_IMAGE:$CI_PIPELINE_ID  .        
+        - docker push $CI_REGISTRY_IMAGE:$CI_PIPELINE_ID
+deploy:
+  stage: deploy
+  variables:
+        CI_AWS_ECS_CLUSTER: sentry-stack
+        CI_AWS_ECS_SERVICE: sentry-service
+        CI_AWS_ECS_TASK_DEFINITION_FILE: task_definition.json
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-ecs:latest
+  script:
+    - sed 's/build/'${CI_PIPELINE_ID}'/g' ci/aws/task_definition.json > task_definition.json
+    - cat task_definition.json
+    - ecs update-task-definition
