@@ -38,14 +38,14 @@ deploy:
   variables:
         CI_AWS_ECS_CLUSTER: sentry-stack
         CI_AWS_ECS_SERVICE: sentry-service
-        CI_AWS_ECS_TASK_DEFINITION_FILE: task_definition.json
+        CI_AWS_ECS_TASK_DEFINITION_FILE: ci/aws/task_definition.json
   environment:
     name: staging
     url: http://3.137.175.7
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-ecs:latest
   script:
     - sed 's/build/'${CI_PIPELINE_ID}'/g' ci/aws/task_definition.json > task_definition.json
-    - sed 's/CI_ENVIRONMENT_NAME/'${CI_ENVIRONMENT_NAME}'/g' ci/aws/task_definition.json > task_definition.json
-    - sed 's/CI_PIPELINE_ID/'${CI_PIPELINE_ID}'/g' ci/aws/task_definition.json > task_definition.json
+    - sed 's/CI_ENVIRONMENT_NAME/'${CI_ENVIRONMENT_NAME}'/g' task_definition.json > task_definition.json
+    - sed 's/CI_PIPELINE_ID/'${CI_PIPELINE_ID}'/g' task_definition.json > task_definition.json
     - cat task_definition.json
     - ecs update-task-definition
