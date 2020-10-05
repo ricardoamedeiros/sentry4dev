@@ -1,5 +1,18 @@
-# sentry4dev
-Material da live Sentry 4dev
+# Sentry 4Dev
+
+# Agenda
+
+* [ ] O que é?
+* [ ] Criar projeto básico Spring Boot
+* [ ] Configuração básica do Sentry no projeto
+  * [ ] Criar o projeto no Sentry
+  * [ ] Configurar o SENTRY_DSN no projeto
+  * [ ] Configurar a biblioteca de integração do Sentry
+[ ] Erro básico reportado;
+[ ] Criar uma release;
+[ ] Integrar com gitlab ci;
+
+
 
 
 # Variáveis do gitlab
@@ -13,3 +26,5 @@ Material da live Sentry 4dev
 ### Integração com sentry
 
 - SENTRY_AUTH_TOKEN
+- SENTRY_LOG_LEVEL
+- SENTRY_ORG
