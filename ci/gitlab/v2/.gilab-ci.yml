@@ -38,7 +38,7 @@ deploy:
   variables:
         CI_AWS_ECS_CLUSTER: sentry-stack
         CI_AWS_ECS_SERVICE: sentry-service
-        CI_AWS_ECS_TASK_DEFINITION_FILE: ci/aws/task_definition.json
+        CI_AWS_ECS_TASK_DEFINITION_FILE: task_definition.json
   environment:
     name: staging
     url: http://3.137.175.7
