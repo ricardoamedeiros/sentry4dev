@@ -2,11 +2,11 @@
    "containerDefinitions": [ 
       { 
          "essential": true,
-         "image": "registry.gitlab.com/ricardoabreum/demo:build",
+         "image": "registry.gitlab.com/sentry5/demo:BUILD",
          "environment": [
                 {
                     "name": "SENTRY_DSN",
-                    "value": "https://29db3879491642f8816c3aa3559b414f@o455442.ingest.sentry.io/5447038?environment=staging&release=CI_PIPELINE_ID"
+                    "value": "https://29db3879491642f8816c3aa3559b414f@o455442.ingest.sentry.io/5447038?environment=CI_ENVIRONMENT_NAME&release=CI_PIPELINE_ID"
                 }
             ],
          "logConfiguration": { 
