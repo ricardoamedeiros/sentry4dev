@@ -1,0 +1,32 @@
+{
+   "containerDefinitions": [ 
+      { 
+         "essential": true,
+         "image": "registry.gitlab.com/ricardoabreum/demo:build",
+         "logConfiguration": { 
+             "logDriver": "awslogs",
+             "options": { 
+                "awslogs-group" : "/ecs/fargate-task-definition",
+                "awslogs-region": "us-east-2",
+                "awslogs-stream-prefix": "ecs"
+             }
+          },
+         "name": "SpringBoot",
+         "portMappings": [ 
+            { 
+               "containerPort": 8080,
+               "hostPort": 8080,
+               "protocol": "tcp"
+            }
+         ]
+      }
+   ],
+   "cpu": "256",
+   "executionRoleArn": "arn:aws:iam::180582965246:role/ecsTaskExecutionRole",
+   "family": "fargate-task-definition",
+   "memory": "512",
+   "networkMode": "awsvpc",
+   "requiresCompatibilities": [ 
+       "FARGATE" 
+    ]
+}
