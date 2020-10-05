@@ -2,7 +2,7 @@
 
 # Agenda
 
-* [ ] O que é?
+* [x] O que é?
 * [ ] Criar projeto básico Spring Boot
 * [ ] Configuração básica do Sentry no projeto
   * [ ] Criar o projeto no Sentry
