@@ -41,7 +41,7 @@ deploy:
         CI_AWS_ECS_TASK_DEFINITION_FILE: ci/aws/task_definition.json
   environment:
     name: staging
-    url: ${url}
+    url: ${URL}
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-ecs:latest
   script:
     - sed -i 's/BUILD/'${CI_PIPELINE_ID}'/g' ci/aws/task_definition.json
