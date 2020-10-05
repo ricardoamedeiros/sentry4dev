@@ -11,25 +11,15 @@
   * [ ] Realizar deploy na AWS ECS
 * [ ] Simular um erro
 * [ ] Analisar o erro no Sentry
-
-# Integração com o Gitlab
-  
-* [ ] Configurar integração
+* [ ] Configurar integração com Gitlab
 
 
 
-
-
-# Variáveis do gitlab
-
-### Necessárias para deploy na AWS
+**Variáveis do gitlab para deploy na AWS e integração com Sentry
 
 - AWS_ACCESS_KEY_ID
 - AWS_DEFAULT_REGION
 - AWS_SECRET_ACCESS_KEY
-
-### Integração com sentry
-
 - SENTRY_AUTH_TOKEN
 - SENTRY_LOG_LEVEL
 - SENTRY_ORG
